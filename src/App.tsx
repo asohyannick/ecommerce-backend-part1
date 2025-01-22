@@ -16,6 +16,7 @@ function App() {
         <Route path="auth">
           <Route path=":login" element={<Login />} />
           <Route path=":signup/user" element={<Register />} />
+
         </Route>
         {/* Nested Routes */}
         <Route path="admin">
