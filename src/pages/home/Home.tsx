@@ -40,6 +40,7 @@ const Home = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <h2 className='text-3xl font-bold underline'>Start coding here</h2>
     </>
   );
 }

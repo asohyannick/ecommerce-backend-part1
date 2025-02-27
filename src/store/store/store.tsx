@@ -37,9 +37,6 @@ export const store = configureStore({
             }
         }),
 });
-// export const store = configureStore({
-//     reducer:{}
-// });
 export const persistor = persistStore(store);
 
 export type RootSate = ReturnType<typeof store.getState>;
