@@ -1,37 +1,62 @@
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Dashboard, Blog } from "./components";
-import { Home, Login, Register, NotFound, Contact } from "./pages"
+import { Home, Login, Register, NotFound, Contact } from "./pages";
+import Layout from "./components/layout/Layout";
 function App() {
-  // const location = useLocation();
   return (
-    <BrowserRouter
+    <Router
       future={{
         v7_startTransition: true,
         v7_relativeSplatPath: true
       }}
     >
       <Routes>
-        <Route index element={<Home />} />
-        <Route path="*" element={<NotFound/>}/>
-        <Route path="auth">
-          <Route path=":login" element={<Login />} />
-          <Route path=":signup/user" element={<Register />} />
-
-        </Route>
-        {/* Nested Routes */}
-        <Route path="admin">
-          <Route path="dashboard" element={<Dashboard />} />
-        </Route>
-          <Route path="*" element={<NotFound/>}/>
-        <Route path="pages">
-           <Route path=":contact" element={<Contact/>}/>
-        </Route>
-        <Route path="components">
-          <Route path=":blog" element={<Blog/>}/>
-        </Route>
+          <Route index element={
+            <Layout>
+             <Home />
+            </Layout>
+          }/>
+          {/* Admin and User Authentication Protected Route */}
+          <Route path="auth">
+            <Route path="login" element={
+              <Layout>
+               <Login />
+              </Layout>
+            } />
+            <Route path="signup/user" element={
+              <Layout>
+               <Register />
+              </Layout>
+            }/>
+          </Route>
+          {/* Admin Dashboard Protect Route */}
+          <Route path="admin">
+            <Route path="dashboard" element={
+              <Layout>
+                <Dashboard />
+              </Layout>
+            }/>
+          </Route>
+          {/* Nested Web Pages */}
+          <Route path="pages">
+            <Route path="contact" element={
+              <Layout>
+               <Contact />
+              </Layout>
+            }/>
+          </Route>
+          {/* Nested Components */}
+          <Route path="components">
+            <Route path="blog" element={
+              <Layout>
+               <Blog />
+              </Layout>
+            }/>
+          </Route>
+          <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
-export default App
+export default App;
