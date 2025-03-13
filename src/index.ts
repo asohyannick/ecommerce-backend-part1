@@ -42,7 +42,8 @@ import testimonialRoute from './routes/testimonial/testimonial.route';
 import serviceRoute from './routes/services/services.route';
 import trainingRoute from './routes/training/training.route';
 import databaseConfiguration from "./config/databaseConfig/databaseConfig";
-import termsAndConditionsRoute from './routes/termsAndConditions/termsAndConditions.route'
+import termsAndConditionsRoute from './routes/termsAndConditions/termsAndConditions.route';
+import supportRoute from './routes/support/support.route';
 const app: Application = express();
 const port: number | string = process.env.APP_PORT as  string | number || 8000;
 const csrfProtection = csurf({cookie: true});
@@ -114,6 +115,7 @@ app.use(`/api/${process.env.API_VERSION}/testimonial`, testimonialRoute);
 app.use(`/api/${process.env.API_VERSION}/service`, serviceRoute);
 app.use(`/api/${process.env.API_VERSION}/training`, trainingRoute);
 app.use(`/api/${process.env.API_VERSION}/terms-and-conditions`, termsAndConditionsRoute);
+app.use(`/api/${process.env.API_VERSION}/support`, supportRoute);
 
 
 function isSpoofed(result:any) {
