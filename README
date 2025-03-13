@@ -18,7 +18,7 @@ Technologies Used
 To improve the performance of image uploads and ensure faster loading times, we utilize Cloudinary. This cloud-based service allows us to upload, store, and manage images efficiently. By offloading image storage to Cloudinary, we significantly reduce the load on our backend, resulting in a more responsive user experience.
 
 4. Other Technologies
-# Redux: For state management in our React application, Redux helps us manage the global state efficiently, improving the user experience.
+# Redux: For state management in our React application, Redux helps us manage the global state efficiently, improving the user experience and a great developer experience too.
 Tailwind CSS: For styling our components, we use Styled Components, allowing us to write actual CSS in our JavaScript, making the styling process more modular and manageable.
 Jest: For testing our application, Jest provides a robust framework that ensures our components and APIs work as intended.
 Join Me on This Journey!
