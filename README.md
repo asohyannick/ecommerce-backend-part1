@@ -28,6 +28,7 @@ shopiJoi is not just a project; it’s a community. I invite developers of all s
 By collaborating on projects like these, we can share knowledge, exchange ideas, and build something meaningful together. As we dive into the intricacies of the MERN stack, TypeScript, and cloud services like Cloudinary, you will gain invaluable experience that will enhance your skill set and broaden your horizons.
 
 How to Contribute
+
 If you’re interested in joining this journey, you can:
 
 Fork the Repo: Start by forking this repository and experimenting with the code.
